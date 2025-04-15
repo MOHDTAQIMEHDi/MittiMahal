@@ -1,7 +1,7 @@
 'use client';
-const { createContext, useContext, useState, useEffect } = require("react");
+import { createContext, useContext, useState, useEffect } from "react";
 
-const CartContext = createContext();
+export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState(() => {
@@ -60,6 +60,12 @@ export const CartProvider = ({ children }) => {
     );
 };
 
-const useCartContext = () => useContext(CartContext);
+export const useCartContext = () => {
+    const context = useContext(CartContext);
+    if (!context) {
+        throw new Error('useCartContext must be used within a CartProvider');
+    }
+    return context;
+};
 
 export default useCartContext;

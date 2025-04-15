@@ -1,60 +1,20 @@
 "use client"
 
-import { useState } from "react"
+import { useContext } from "react"
 import { Minus, Plus, ShoppingCart, Trash2 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-
-// Mock product data
-const initialCartItems = [
-  {
-    id: 1,
-    name: "Terracotta Planter",
-    description: "Handcrafted terracotta planter with natural finish",
-    price: 24.99,
-    quantity: 1,
-    image: "/placeholder.svg?height=80&width=80",
-  },
-  {
-    id: 2,
-    name: "Clay Water Pot",
-    description: "Traditional clay water pot for natural cooling",
-    price: 34.99,
-    quantity: 2,
-    image: "/placeholder.svg?height=80&width=80",
-  },
-  {
-    id: 3,
-    name: "Ceramic Dinner Set",
-    description: "6-piece handmade ceramic dinner set",
-    price: 89.99,
-    quantity: 1,
-    image: "/placeholder.svg?height=80&width=80",
-  },
-]
+import useCartContext from "@/context/CartContext"
 
 export default function CartPage() {
-  const [cartItems, setCartItems] = useState(initialCartItems)
-
-  const updateQuantity = () => {
-    if (newQuantity < 1) return
-    setCartItems(cartItems.map((item) => (item.id === id ? { ...item, quantity: newQuantity } : item)))
-  }
-
-  const removeItem = () => {
-    setCartItems(cartItems.filter((item) => item.id !== id))
-  }
-
-  const calculateSubtotal = () => {
-    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
-  }
+  const { cartItems, addItemToCart, removeItemFromCart, calculateTotalAmount } = useCartContext()
 
   const calculateTax = () => {
-    return calculateSubtotal() * 0.08 // 8% tax
+    return calculateTotalAmount() * 0.08 // 8% tax
   }
 
   const calculateTotal = () => {
-    return calculateSubtotal() + calculateTax() + 5.99 // Adding shipping cost
+    return calculateTotalAmount() + calculateTax() + 5.99 // Adding shipping cost
   }
 
   return (
@@ -106,7 +66,7 @@ export default function CartPage() {
 
                 {cartItems.map((item) => (
                   <div
-                    key={item.id}
+                    key={item._id}
                     className="grid grid-cols-1 md:grid-cols-12 p-4 border-b border-gray-200 items-center hover:bg-[#f8f5f2] transition-colors duration-200"
                   >
                     {/* Product */}
@@ -135,7 +95,7 @@ export default function CartPage() {
                     <div className="col-span-2 flex justify-center mb-4 md:mb-0">
                       <div className="flex items-center border border-gray-300 rounded-md">
                         <button
-                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                          onClick={() => removeItemFromCart(item._id)}
                           className="p-2 text-gray-600 hover:text-[#854d27] transition-colors"
                           aria-label="Decrease quantity"
                         >
@@ -143,7 +103,7 @@ export default function CartPage() {
                         </button>
                         <span className="px-4 py-2 text-center w-12">{item.quantity}</span>
                         <button
-                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          onClick={() => addItemToCart(item)}
                           className="p-2 text-gray-600 hover:text-[#854d27] transition-colors"
                           aria-label="Increase quantity"
                         >
@@ -157,7 +117,7 @@ export default function CartPage() {
                       <span className="md:hidden font-medium text-[#854d27] mr-2">Total:</span>
                       <span>${(item.price * item.quantity).toFixed(2)}</span>
                       <button
-                        onClick={() => removeItem(item.id)}
+                        onClick={() => removeItemFromCart(item._id)}
                         className="ml-4 text-red-500 hover:text-red-700 transition-colors md:absolute md:right-8"
                         aria-label="Remove item"
                       >
@@ -177,7 +137,7 @@ export default function CartPage() {
                 <div className="space-y-4">
                   <div className="flex justify-between text-gray-600">
                     <span>Subtotal</span>
-                    <span>${calculateSubtotal().toFixed(2)}</span>
+                    <span>${calculateTotalAmount().toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-gray-600">
                     <span>Tax (8%)</span>

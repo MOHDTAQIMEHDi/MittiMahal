@@ -531,7 +531,7 @@ function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const slides = [
     {
-      image: "/placeholder.svg?height=1080&width=1920",
+      image: "/clay-old-dishes-decoration-of-the-wall-free-photo.jpg",
       title: "Handcrafted Clay Artistry",
       subtitle: "Discover unique clay products crafted by skilled artisans from across the country",
       cta: "Shop Collection",
@@ -539,7 +539,7 @@ function HeroSlider() {
       color: "brown",
     },
     {
-      image: "/placeholder.svg?height=1080&width=1920",
+      image: "/desktop-wallpaper-pottery-clay-pots.jpg",
       title: "Traditional Pottery Reimagined",
       subtitle: "Blending ancient techniques with contemporary designs",
       cta: "Explore Now",
@@ -547,7 +547,7 @@ function HeroSlider() {
       color: "terracotta",
     },
     {
-      image: "/placeholder.svg?height=1080&width=1920",
+      image: "/clay-old-dishes-decoration-of-the-wall-free-photo.jpg",
       title: "Artisan Spotlight",
       subtitle: "Meet the master craftspeople behind our exclusive collections",
       cta: "Meet Artisans",

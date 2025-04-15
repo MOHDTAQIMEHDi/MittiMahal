@@ -1,0 +1,14 @@
+// const fetchProduct = () => { 
+//     axios.get(`http://localhost:5000/product/getbyid/${id}`)
+//       .then((result) => {
+//         console.log(result.data);
+//         setProduct(result.data);
+//         setMainImage(result.data.image);
+//       }).catch((err) => {
+//         console.log(err);
+//       });
+//   }
+
+//   useEffect(() => {
+//     fetchProduct();
+//   }, [])
