@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { ShoppingCart } from 'lucide-react';
 
 const Login= () => {
   const loginForm = useFormik({
@@ -32,13 +33,29 @@ const Login= () => {
 
 
   return (
+    <div className='min-h-screen bg-[#f8f5f2]'>
+        <header className="bg-[#854d27] text-white p-4 shadow-md">
+            <div className="container mx-auto flex justify-between items-center">
+              <span className="text-2xl font-bold">
+                Mitti Mahal
+              </span>
+              <div className="flex items-center space-x-4">
+                <div className="relative">
+                  <ShoppingCart className="h-6 w-6" />
+                  {/* <span className="absolute -top-2 -right-2 bg-[#d4a373] text-white rounded-full h-5 w-5 flex items-center justify-center text-xs">
+                    {cartItems.reduce((total, item) => total + item.quantity, 0)}
+                  </span> */}
+                </div>
+              </div>
+            </div>
+          </header>
     <div>
         {/* <h1 class='text-center font-bold my-10 text-5xl' >Login Page</h1>
         <button className='global-btn'>Login button</button>
         <button className={classes.localBtn}>Local button</button> */}
         <div className="bg-white py-6 sm:py-8 lg:py-12">
   <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-    <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl">
+    <h2 className="mb-4 text-center text-2xl font-boldtext-[#854d27] dark:text-white md:mb-8 lg:text-3xl">
       Seller Login
     </h2>
     <form onSubmit={loginForm.handleSubmit}
@@ -72,7 +89,7 @@ const Login= () => {
             className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
           />
         </div>
-        <button type='submit' className="block rounded-lg bg-gray-800 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-gray-300 transition duration-100 hover:bg-gray-700 focus-visible:ring active:bg-gray-600 md:text-base">
+        <button type='submit' className="block rounded-lg  px-8 py-3 text-center text-sm font-semibold bg-[#854d27] text-white hover:bg-[#6e3b1e]outline-none ring-gray-300 transition duration-100 focus-visible:ring active:bg-gray-600 md:text-base">
          Log in
         </button>
         {/* <div className="relative flex items-center justify-center">
@@ -131,7 +148,7 @@ const Login= () => {
           Don't have an account?{" "}
           <a
             href="/signup"
-            className="text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
+            className="text-[#854d27] transition duration-100 hover:text-[#6e3b1e] active:text-indigo-700"
           >
             Register
           </a>
@@ -141,6 +158,16 @@ const Login= () => {
   </div>
 </div>
 
+    </div>
+    <footer className="bg-[#854d27] text-white py-8 mt-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h3 className="text-xl font-bold mb-2">Mitti Mahal</h3>
+            <p className="text-sm opacity-75">Handcrafted pottery for your home</p>
+            <p className="text-xs mt-4 opacity-60">© {new Date().getFullYear()} Mitti Mahal. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }

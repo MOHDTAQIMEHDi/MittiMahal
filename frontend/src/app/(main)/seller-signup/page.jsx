@@ -154,6 +154,7 @@ const Signup = () => {
               <input
                 type="text"
                 id="name"
+                placeholder="Enter your name"
                 onChange={signupForm.handleChange}
                 value={signupForm.values.name}
                 className=" border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
@@ -194,6 +195,7 @@ const Signup = () => {
               <input
                 type="number"
                 id="mobile"
+                placeholder="Enter your mobile number"
                 onChange={signupForm.handleChange}
                 value={signupForm.values.mobile}
                 className=" border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
@@ -234,6 +236,7 @@ const Signup = () => {
               <input
                 type="text" 
                 id="address"
+                placeholder="Enter your address"
                 onChange={signupForm.handleChange}
                 value={signupForm.values.address}
                 className=" border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
@@ -274,6 +277,7 @@ const Signup = () => {
               <input
                 type="text" 
                 id="city"
+                placeholder="Enter your city"
                 onChange={signupForm.handleChange}
                 value={signupForm.values.city}
                 className=" border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
@@ -314,6 +318,7 @@ const Signup = () => {
               <input
                 type="text" 
                 id="state"
+                placeholder="Enter your state"
                 onChange={signupForm.handleChange}
                 value={signupForm.values.state}
                 className=" border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
@@ -354,6 +359,7 @@ const Signup = () => {
               <input
                 type="number" 
                 id="pincode"
+                placeholder="Enter your pincode"
                 onChange={signupForm.handleChange}
                 value={signupForm.values.pincode}
                 className=" border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
@@ -397,6 +403,7 @@ const Signup = () => {
               <input
                 type="email"
                 id="email"
+                placeholder="Enter your email"
                 onChange={signupForm.handleChange}
                 value={signupForm.values.email}
                 className=" border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
@@ -437,6 +444,7 @@ const Signup = () => {
               <input
                 type="password"
                 id="password"
+                placeholder="Enter your password"
                 onChange={signupForm.handleChange}
                 value={signupForm.values.password}
                 className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
@@ -478,6 +486,7 @@ const Signup = () => {
               <input
                 type="password"
                 id="confirmPassword"
+                placeholder="Confirm your password"
                 onChange={signupForm.handleChange}
                 value={signupForm.values.confirmPassword}
                 className=" border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"

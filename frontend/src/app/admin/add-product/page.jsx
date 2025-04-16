@@ -3,7 +3,7 @@ import React from 'react'
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
-import { Upload, X } from "lucide-react"
+import { ShoppingCart, Upload, X } from "lucide-react"
 import { useFormik } from 'formik'
 import axios from 'axios'
 import toast from 'react-hot-toast'
@@ -77,15 +77,30 @@ const AddProductPage = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50">
+            <header className="bg-[#854d27] text-white p-4 shadow-md">
+        <div className="container mx-auto flex justify-between items-center">
+          <span className="text-2xl font-bold">
+            Mitti Mahal
+          </span>
+          <div className="flex items-center space-x-4">
+            <div className="relative">
+              <ShoppingCart className="h-6 w-6" />
+              {/* <span className="absolute -top-2 -right-2 bg-[#d4a373] text-white rounded-full h-5 w-5 flex items-center justify-center text-xs">
+                {cartItems.reduce((total, item) => total + item.quantity, 0)}
+              </span> */}
+            </div>
+          </div>
+        </div>
+      </header>
             <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-3xl mx-auto">
                     <div className="text-center mb-8">
-                        <h1 className="text-3xl font-bold text-amber-800">Mitti Mahal</h1>
-                        <p className="text-amber-600 mt-2">Add Your Handcrafted Products</p>
+                        <h1 className="text-3xl font-bold text-amber-800">Add Your Handcrafted Products</h1>
+                        <p className="text-amber-600 mt-2"> </p>
                     </div>
 
                     <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
-                        <h2 className="text-xl font-semibold text-gray-800 mb-6">Product Details</h2>
+                        <h2 className="text-xl text-center font-semibold text-gray-800 mb-6">Product Details</h2>
 
                         <form onSubmit={productForm.handleSubmit} className="space-y-6">
                             {/* Product Name */}
@@ -212,7 +227,7 @@ const AddProductPage = () => {
                                 ) : (
                                     <div className="mt-1 relative">
                                         <div className="relative h-64 w-full overflow-hidden rounded-md">
-                                            <Image
+                                            <img
                                                 src={imagePreview || "/placeholder.svg"}
                                                 alt="Product preview"
                                                 fill
@@ -236,7 +251,7 @@ const AddProductPage = () => {
                                 <button
                                     type="submit"
                                     disabled={productForm.isSubmitting}
-                                    className={`w-full py-3 px-4 border border-transparent rounded-md shadow-sm text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 ${isSubmitting ? "opacity-75 cursor-not-allowed" : ""}`}
+                                    className={`w-full py-3 px-4 border border-transparent rounded-md shadow-sm bg-[#854d27] text-white hover:bg-[#6e3b1e] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 ${isSubmitting ? "opacity-75 cursor-not-allowed" : ""}`}
                                 >
                                     {productForm.isSubmitting ? "Adding Product..." : "Add Product"}
                                 </button>
@@ -249,6 +264,15 @@ const AddProductPage = () => {
                     </div>
                 </div>
             </div>
+            <footer className="bg-[#854d27] text-white py-8 mt-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h3 className="text-xl font-bold mb-2">Mitti Mahal</h3>
+            <p className="text-sm opacity-75">Handcrafted pottery for your home</p>
+            <p className="text-xs mt-4 opacity-60">© {new Date().getFullYear()} Mitti Mahal. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
         </div>
     )
 }
