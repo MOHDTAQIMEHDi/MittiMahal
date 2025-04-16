@@ -243,7 +243,8 @@ export default function ProductPage({ params }) {
                   </button>
                 </div>
 
-                <button className="flex-1 bg-[#854d27] text-white py-3 px-6 rounded-md hover:bg-[#6e3b1e] transition-colors duration-300 flex items-center justify-center">
+                <button 
+                className="flex-1 bg-[#854d27] text-white py-3 px-6 rounded-md hover:bg-[#6e3b1e] transition-colors duration-300 flex items-center justify-center">
                   <ShoppingCart className="h-5 w-5 mr-2" />
                   Add to Cart
                 </button>

@@ -1,8 +1,24 @@
-import { Clock, Facebook, Instagram, Mail, MapPin, Phone, Twitter, Youtube } from 'lucide-react'
+import { Clock, Facebook, Instagram, Mail, MapPin, Phone, ShoppingCart, Twitter, Youtube } from 'lucide-react'
 import React from 'react'
 
 function ContactUs() {
   return (
+    <div className='min-h-screen bg-[#f8f5f2]'>
+        <header className="bg-[#854d27] text-white p-4 shadow-md">
+            <div className="container mx-auto flex justify-between items-center">
+              <span className="text-2xl font-bold">
+                Mitti Mahal
+              </span>
+              <div className="flex items-center space-x-4">
+                <div className="relative">
+                  <ShoppingCart className="h-6 w-6" />
+                  {/* <span className="absolute -top-2 -right-2 bg-[#d4a373] text-white rounded-full h-5 w-5 flex items-center justify-center text-xs">
+                    {cartItems.reduce((total, item) => total + item.quantity, 0)}
+                  </span> */}
+                </div>
+              </div>
+            </div>
+          </header>
     <section className="py-10 md:py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
@@ -152,6 +168,16 @@ function ContactUs() {
         </div>
       </div>
     </section>
+    <footer className="bg-[#854d27] text-white py-8 mt-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h3 className="text-xl font-bold mb-2">Mitti Mahal</h3>
+            <p className="text-sm opacity-75">Handcrafted pottery for your home</p>
+            <p className="text-xs mt-4 opacity-60">© {new Date().getFullYear()} Mitti Mahal. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
   )
 }
 

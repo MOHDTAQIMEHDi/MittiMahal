@@ -220,8 +220,8 @@ function Navbar() {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <Link href="/" className="flex items-center">
-                <Image
-                  src="/placeholder.svg?height=50&width=50"
+                <img
+                  src="/Screenshot_16-4-2025_202821_www.design.com-removebg-preview.png"
                   alt="Mitti Mahal Logo"
                   width={40}
                   height={40}
@@ -234,7 +234,7 @@ function Navbar() {
             </div>
 
             {/* Search Bar */}
-            <div
+            {/* <div
               className={`${isSearchOpen ? "flex absolute top-full left-0 right-0 p-4 bg-white shadow-md md:shadow-none md:static md:bg-transparent md:p-0" : "hidden md:flex"} flex-1 max-w-xl mx-4 relative`}
             >
               <input
@@ -247,7 +247,7 @@ function Navbar() {
               <button className="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#8B4513]">
                 <Search className="h-4 w-4" />
               </button>
-            </div>
+            </div> */}
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-6">
@@ -313,7 +313,7 @@ function Navbar() {
                   </div>
                 )}
               </div>
-              <Link
+              {/* <Link
                 href="/new-arrivals"
                 className="text-[#5D4037] hover:text-[#8B4513] font-medium transition-colors duration-200 text-sm"
               >
@@ -330,12 +330,18 @@ function Navbar() {
                 className="text-[#5D4037] hover:text-[#8B4513] font-medium transition-colors duration-200 text-sm"
               >
                 Artisans
-              </Link>
+              </Link> */}
               <Link
                 href="/about"
                 className="text-[#5D4037] hover:text-[#8B4513] font-medium transition-colors duration-200 text-sm"
               >
                 About Us
+              </Link>
+              <Link
+                href="/contact"
+                className="text-[#5D4037] hover:text-[#8B4513] font-medium transition-colors duration-200 text-sm"
+              >
+                Contact Us
               </Link>
             </div>
 
@@ -345,6 +351,12 @@ function Navbar() {
                 className="bg-gradient-to-r from-[#8B4513] to-[#D2691E] hover:from-[#A0522D] hover:to-[#CD853F] text-white text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
               >
                 Sign Up
+              </Link>
+              <Link
+                href="/login"
+                className="bg-gradient-to-r from-[#8B4513] to-[#D2691E] hover:from-[#A0522D] hover:to-[#CD853F] text-white text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+              >
+                Log In
               </Link>
 
               <div className="relative" ref={accountRef}>
@@ -356,7 +368,7 @@ function Navbar() {
                 </button>
                 {isAccountOpen && (
                   <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-10 border border-[#E6C2A0]">
-                    <Link
+                    {/* <Link
                       href="/auth/user-login"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#F5EFE7] hover:text-[#8B4513]"
                     >
@@ -367,7 +379,7 @@ function Navbar() {
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#F5EFE7] hover:text-[#8B4513]"
                     >
                       User Signup
-                    </Link>
+                    </Link> */}
                     <div className="border-t border-gray-200 my-1"></div>
                     <Link
                       href="/auth/seller-login"
@@ -861,9 +873,9 @@ function BrowseProducts() {
             <h2 className="text-3xl font-bold text-[#5D4037] mb-2">Popular Products</h2>
             <p className="text-[#8B4513]/80">Discover our bestselling handcrafted clay products</p>
           </div>
-          <button className="bg-[#8B4513] hover:bg-[#A0522D] text-white rounded-full text-sm font-medium px-2 py-1">
+          <Link href="/browse-product" className="bg-[#8B4513] hover:bg-[#A0522D] text-white rounded-full text-sm font-medium px-2 py-1">
             View All Products <ArrowRight className="ml-2 h-3 w-3 md:h-4 md:w-4" />
-          </button>
+          </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
           {products.map((product) => (

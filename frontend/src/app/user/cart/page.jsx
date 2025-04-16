@@ -72,7 +72,7 @@ export default function CartPage() {
                     {/* Product */}
                     <div className="col-span-6 flex items-center space-x-4 mb-4 md:mb-0">
                       <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 bg-[#e9e2d0]">
-                        <Image
+                        <img
                           src={item.image || "/placeholder.svg"}
                           alt={item.name}
                           width={80}
@@ -156,9 +156,9 @@ export default function CartPage() {
                   </div>
                 </div>
 
-                <button className="w-full mt-6 bg-[#854d27] text-white py-3 px-4 rounded-md hover:bg-[#6e3b1e] transition-colors duration-300 flex items-center justify-center">
+                <Link href="\user\checkout" className="w-full mt-6 bg-[#854d27] text-white py-3 px-4 rounded-md hover:bg-[#6e3b1e] transition-colors duration-300 flex items-center justify-center">
                   Proceed to Checkout
-                </button>
+                </Link>
 
                 <div className="mt-6 text-center">
                   <Link href="/" className="text-[#854d27] hover:text-[#6e3b1e] text-sm font-medium">

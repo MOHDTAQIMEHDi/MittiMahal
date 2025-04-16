@@ -44,7 +44,7 @@ export default function BrowsePage() {
         <nav className="container mx-auto flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold">Mitti Mahal</Link>
           <div className="flex items-center space-x-4">
-            <Link href="/cart" className="hover:text-[#d4a373] transition-colors duration-200">Cart</Link>
+            <Link href="/user/cart" className="hover:text-[#d4a373] transition-colors duration-200">Cart</Link>
           </div>
         </nav>
       </header>
