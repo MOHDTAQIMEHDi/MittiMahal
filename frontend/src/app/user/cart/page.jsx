@@ -1,13 +1,16 @@
 "use client"
 
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { Minus, Plus, ShoppingCart, Trash2 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import useCartContext from "@/context/CartContext"
+import { useRouter } from "next/navigation"
+import toast from "react-hot-toast"
 
 export default function CartPage() {
   const { cartItems, addItemToCart, removeItemFromCart, calculateTotalAmount } = useCartContext()
+  const router = useRouter();
 
   const calculateTax = () => {
     return calculateTotalAmount() * 0.08 // 8% tax
@@ -16,6 +19,15 @@ export default function CartPage() {
   const calculateTotal = () => {
     return calculateTotalAmount() + calculateTax() + 5.99 // Adding shipping cost
   }
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      toast.error("Please login to view your cart")
+      router.replace("/login");
+    }
+  }, [])
+
 
   return (
     <div className="min-h-screen bg-[#f8f5f2]">

@@ -1,6 +1,10 @@
+import useAppContext from '@/context/AppContext'
 import React from 'react'
 
 const Navbar = () => {
+
+
+
   return (
     <div className="bg-white pb-6 sm:pb-8 lg:pb-12">
       <header className="mb-8 border-b">

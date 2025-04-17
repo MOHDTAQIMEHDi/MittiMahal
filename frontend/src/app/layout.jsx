@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <CartProvider>
-          <Toaster position="top-center"></Toaster>
+          <Toaster position="top-center" />
           {children}
         </CartProvider>
       </body>

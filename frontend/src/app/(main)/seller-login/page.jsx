@@ -21,7 +21,7 @@ const Login= () => {
     .then((result) => {
       toast.success('Login Success');
       console.log(result.data?.token);
-      localStorage.setItem('token', result.data?.token);
+      localStorage.setItem('seller-token', result.data?.token);
       
       
     }).catch((err) => {
