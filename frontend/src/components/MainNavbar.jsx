@@ -1,4 +1,5 @@
 'use client';
+import useCartContext from "@/context/CartContext";
 import {
     ChevronDown,
     ShoppingBag,
@@ -41,6 +42,8 @@ function MainNavbar() {
     const accountRef = useRef(null)
 
     const { userLoggedIn, setUserLoggedIn, logout } = useAppContext();
+      const { cartItems, addItemToCart, removeItemFromCart, calculateTotalAmount } = useCartContext()
+    
 
     useEffect(() => {
         const handleScroll = () => {
@@ -242,7 +245,7 @@ function MainNavbar() {
                         <div className="hidden md:flex items-center space-x-3">
                             {
                                 userLoggedIn ? (
-                                    <button className="bg-red-500 p-3" onClick={logout}>logout</button>
+                                    <button className="bg-gradient-to-r from-[#8B4513] to-[#D2691E] hover:from-[#A0522D] hover:to-[#CD853F] text-white text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg" onClick={logout}>Logout</button>
                                 ) : (
                                     <>
                                         <Link
@@ -313,8 +316,8 @@ function MainNavbar() {
                             </button>
                             <button className="flex items-center justify-center w-9 h-9 rounded-full bg-[#F5EFE7] text-[#5D4037] hover:bg-[#E6C2A0] hover:text-[#8B4513] transition-colors duration-200 relative">
                                 <ShoppingBag className="h-5 w-5" />
-                                <span className="absolute -top-1 -right-1 bg-[#D2691E] text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
-                                    2
+                                <span className="absolute -top-2 -right-2 bg-[#d4a373] text-white rounded-full h-5 w-5 flex items-center justify-center text-xs">
+                                    {cartItems.reduce((total, item) => total + item.quantity, 0)}
                                 </span>
                             </button>
                         </div>

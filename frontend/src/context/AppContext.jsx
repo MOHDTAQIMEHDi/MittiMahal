@@ -9,9 +9,8 @@ const AppContext = createContext();
 export const AppProvider = ({ children }) => {
 
     const router = useRouter();
-
     const [userLoggedIn, setUserLoggedIn] = useState(() => {
-        const token = localStorage.getItem("token");
+        const token = localStorage.getItem("token") || localStorage.getItem("admin");
         return token ? true : false;
     });
 

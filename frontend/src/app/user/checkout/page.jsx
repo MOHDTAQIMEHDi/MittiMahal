@@ -8,34 +8,35 @@ import Link from "next/link"
 import { Check, CreditCard, Info, Package, ShoppingCart, Truck } from "lucide-react"
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import * as Yup from "yup"
+import useCartContext from "@/context/CartContext"
 
 // Mock cart items data
-const cartItems = [
-  {
-    id: 1,
-    name: "Terracotta Planter",
-    description: "Handcrafted terracotta planter with natural finish",
-    price: 24.99,
-    quantity: 1,
-    image: "/placeholder.svg?height=80&width=80",
-  },
-  {
-    id: 2,
-    name: "Clay Water Pot",
-    description: "Traditional clay water pot for natural cooling",
-    price: 34.99,
-    quantity: 2,
-    image: "/placeholder.svg?height=80&width=80",
-  },
-  {
-    id: 3,
-    name: "Ceramic Dinner Set",
-    description: "6-piece handmade ceramic dinner set",
-    price: 89.99,
-    quantity: 1,
-    image: "/placeholder.svg?height=80&width=80",
-  },
-]
+// const cartItems = [
+//   {
+//     id: 1,
+//     name: "Terracotta Planter",
+//     description: "Handcrafted terracotta planter with natural finish",
+//     price: 24.99,
+//     quantity: 1,
+//     image: "/placeholder.svg?height=80&width=80",
+//   },
+//   {
+//     id: 2,
+//     name: "Clay Water Pot",
+//     description: "Traditional clay water pot for natural cooling",
+//     price: 34.99,
+//     quantity: 2,
+//     image: "/placeholder.svg?height=80&width=80",
+//   },
+//   {
+//     id: 3,
+//     name: "Ceramic Dinner Set",
+//     description: "6-piece handmade ceramic dinner set",
+//     price: 89.99,
+//     quantity: 1,
+//     image: "/placeholder.svg?height=80&width=80",
+//   },
+// ]
 
 // Shipping options
 const shippingOptions = [
@@ -84,6 +85,7 @@ const PaymentSchema = Yup.object().shape({
 
 export default function CheckoutPage() {
   // State for checkout steps
+  const { cartItems, addItemToCart, removeItemFromCart, calculateTotalAmount } = useCartContext()
   const [currentStep, setCurrentStep] = useState(1)
   const [formData, setFormData] = useState({
     // Shipping info
@@ -734,9 +736,9 @@ export default function CheckoutPage() {
 
               <div className="space-y-4 mb-6">
                 {cartItems.map((item) => (
-                  <div key={item.id} className="flex">
+                  <div key={item._id} className="flex">
                     <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 bg-[#e9e2d0]">
-                      <Image
+                      <img
                         src={item.image || "/placeholder.svg"}
                         alt={item.name}
                         width={64}
