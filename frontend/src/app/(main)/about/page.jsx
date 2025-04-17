@@ -21,7 +21,7 @@ function AboutUs() {
                   </div>
                 </div>
               </header> */} 
-    <section className="py-10 md:py-16 bg-[#F5EFE7]">
+    <section className="py-10 md:py-16 bg-[#fdfdfd]">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
