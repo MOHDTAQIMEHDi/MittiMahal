@@ -6,94 +6,98 @@ import { useFormik } from 'formik';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { ShoppingCart } from 'lucide-react';
+import useAppContext from '@/context/AppContext';
 
-const Login= () => {
+const Login = () => {
+
+  const { userLoggedIn, setUserLoggedIn } = useAppContext();
+
   const loginForm = useFormik({
     initialValues: {
-     email: '',
-     password: '',  
+      email: '',
+      password: '',
     },
-    
-  onSubmit:(values)=>{
-    console.log(values);
 
-    axios.post('http://localhost:5000/user/authenticate' , values)
-    .then((result) => {
-      toast.success('Login Success');
-      console.log(result.data?.token);
-      localStorage.setItem('token', result.data?.token);
-      
-      
-    }).catch((err) => {
-      console.log(err);
-      toast.error('login failed');
-    });
-  }
+    onSubmit: (values) => {
+      console.log(values);
+
+      axios.post('http://localhost:5000/user/authenticate', values)
+        .then((result) => {
+          toast.success('Login Success');
+          console.log(result.data?.token);
+          localStorage.setItem('token', result.data?.token);
+          setUserLoggedIn(true);
+
+        }).catch((err) => {
+          console.log(err);
+          toast.error('login failed');
+        });
+    }
   });
 
 
   return (
-    
+
     <div className='min-h-screen bg-[#f8f5f2]'>
-        <header className="bg-[#854d27] text-white p-4 shadow-md">
-            <div className="container mx-auto flex justify-between items-center">
-              <span className="text-2xl font-bold">
-                Mitti Mahal
-              </span>
-              <div className="flex items-center space-x-4">
-                <div className="relative">
-                  <ShoppingCart className="h-6 w-6" />
-                  {/* <span className="absolute -top-2 -right-2 bg-[#d4a373] text-white rounded-full h-5 w-5 flex items-center justify-center text-xs">
+      <header className="bg-[#854d27] text-white p-4 shadow-md">
+        <div className="container mx-auto flex justify-between items-center">
+          <span className="text-2xl font-bold">
+            Mitti Mahal
+          </span>
+          <div className="flex items-center space-x-4">
+            <div className="relative">
+              <ShoppingCart className="h-6 w-6" />
+              {/* <span className="absolute -top-2 -right-2 bg-[#d4a373] text-white rounded-full h-5 w-5 flex items-center justify-center text-xs">
                     {cartItems.reduce((total, item) => total + item.quantity, 0)}
                   </span> */}
-                </div>
-              </div>
             </div>
-          </header>
-    <div>
+          </div>
+        </div>
+      </header>
+      <div>
         {/* <h1 class='text-center font-bold my-10 text-5xl' >Login Page</h1>
         <button className='global-btn'>Login button</button>
         <button className={classes.localBtn}>Local button</button> */}
         <div className="bg-white py-6 sm:py-8 lg:py-12">
-  <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-    <h2 className="mb-4 text-center text-2xl font-bold text-[#854d27] dark:text-white md:mb-8 lg:text-3xl">
-      User Login
-    </h2>
-    <form onSubmit={loginForm.handleSubmit}
-     className="mx-auto max-w-lg rounded-lg border">
-      <div className="flex flex-col gap-4 p-4 md:p-8">
-        <div>
-          <label
-            htmlFor="email"
-            className="mb-2 inline-block text-sm text-gray-800 sm:text-base"
-          >
-            Email
-          </label>
-          <input
-            name="email"
-            onChange={loginForm.handleChange}
-            value={loginForm.values.email}
-            className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="password"
-            className="mb-2 inline-block text-sm text-gray-800 sm:text-base"
-          >
-            Password
-          </label>
-          <input
-            name="password"
-            onChange={loginForm.handleChange}
-            value={loginForm.values.password}
-            className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
-          />
-        </div>
-        <button type='submit' className="block rounded-lg  px-8 py-3 text-center text-sm font-semibold bg-[#854d27] text-white hover:bg-[#6e3b1e]  outline-none ring-gray-300 transition duration-100  focus-visible:ring active:bg-gray-600 md:text-base">
-          Log in
-        </button>
-        {/* <div className="relative flex items-center justify-center">
+          <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+            <h2 className="mb-4 text-center text-2xl font-bold text-[#854d27] dark:text-white md:mb-8 lg:text-3xl">
+              User Login
+            </h2>
+            <form onSubmit={loginForm.handleSubmit}
+              className="mx-auto max-w-lg rounded-lg border">
+              <div className="flex flex-col gap-4 p-4 md:p-8">
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="mb-2 inline-block text-sm text-gray-800 sm:text-base"
+                  >
+                    Email
+                  </label>
+                  <input
+                    name="email"
+                    onChange={loginForm.handleChange}
+                    value={loginForm.values.email}
+                    className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="password"
+                    className="mb-2 inline-block text-sm text-gray-800 sm:text-base"
+                  >
+                    Password
+                  </label>
+                  <input
+                    name="password"
+                    onChange={loginForm.handleChange}
+                    value={loginForm.values.password}
+                    className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+                  />
+                </div>
+                <button type='submit' className="block rounded-lg  px-8 py-3 text-center text-sm font-semibold bg-[#854d27] text-white hover:bg-[#6e3b1e]  outline-none ring-gray-300 transition duration-100  focus-visible:ring active:bg-gray-600 md:text-base">
+                  Log in
+                </button>
+                {/* <div className="relative flex items-center justify-center">
           <span className="absolute inset-x-0 h-px bg-gray-300" />
           <span className="relative bg-white px-4 text-sm text-gray-400">
             Log in with social
@@ -143,24 +147,24 @@ const Login= () => {
           </svg>
           Continue with Google
         </button> */}
-      </div>
-      <div className="flex items-center justify-center bg-gray-100 p-4">
-        <p className="text-center text-sm text-gray-500">
-          Don't have an account?{" "}
-          <a
-            href="/signup"
-            className="text-[#854d27] transition duration-100 hover:text-[#6e3b1e]  active:text-indigo-700 hover:underline" 
-          >
-            Register
-          </a>
-        </p>
-      </div>
-    </form>
-  </div>
-</div>
+              </div>
+              <div className="flex items-center justify-center bg-gray-100 p-4">
+                <p className="text-center text-sm text-gray-500">
+                  Don't have an account?{" "}
+                  <a
+                    href="/signup"
+                    className="text-[#854d27] transition duration-100 hover:text-[#6e3b1e]  active:text-indigo-700 hover:underline"
+                  >
+                    Register
+                  </a>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
 
-    </div>
-    <footer className="bg-[#854d27] text-white py-8 mt-16">
+      </div>
+      <footer className="bg-[#854d27] text-white py-8 mt-16">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h3 className="text-xl font-bold mb-2">Mitti Mahal</h3>

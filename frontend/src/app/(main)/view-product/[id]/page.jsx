@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import axios from "axios"
 import { ChevronRight, Heart, Minus, Plus, Share2, ShoppingCart, Star } from "lucide-react"
+import useCartContext from "@/context/CartContext"
 
 // Mock related products for now
 const relatedProducts = [
@@ -44,6 +45,8 @@ export default function ProductPage({ params }) {
   const [activeTab, setActiveTab] = useState("description")
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+
+  const {addItemToCart} = useCartContext();
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -244,6 +247,7 @@ export default function ProductPage({ params }) {
                 </div>
 
                 <button 
+                onClick={() => addItemToCart(product)}
                 className="flex-1 bg-[#854d27] text-white py-3 px-6 rounded-md hover:bg-[#6e3b1e] transition-colors duration-300 flex items-center justify-center">
                   <ShoppingCart className="h-5 w-5 mr-2" />
                   Add to Cart

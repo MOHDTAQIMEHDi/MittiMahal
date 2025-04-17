@@ -11,14 +11,14 @@ export const AppProvider = ({ children }) => {
     const router = useRouter();
 
     const [userLoggedIn, setUserLoggedIn] = useState(() => {
-        const token = localStorage.getItem("user-token");
+        const token = localStorage.getItem("token");
         return token ? true : false;
     });
 
     const logout = () => {
-        localStorage.removeItem("user-token");
+        localStorage.removeItem("token");
         setUserLoggedIn(false);
-        router.replace("/user-login");
+        router.replace("/login");
     }
 
     const [sellerLoggedIn, setsellerLoggedIn] = useState(() => {
