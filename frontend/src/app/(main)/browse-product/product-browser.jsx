@@ -221,9 +221,12 @@ export function ProductBrowser({
                   <ShoppingCart className="h-4 w-4 mr-2" />
                   Add to Cart
                 </button>
-                <button className="p-2 rounded-md border border-gray-300 text-gray-600 hover:text-[#854d27] hover:border-[#854d27] transition-colors">
-                  <Heart className="h-4 w-4" />
-                </button>
+                <Link
+                    href={`/view-product/${product._id}`}
+                    className="text-[#854d27] bg-white py-2 px-4 border border-[#854d27] rounded text-sm font-medium hover:bg-[#6e3b1e] hover:text-white transition-colors duration-300"
+                  >
+                    View
+                  </Link>
               </div>
             </div>
           </div>

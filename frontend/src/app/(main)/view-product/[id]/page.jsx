@@ -243,7 +243,7 @@ export default function ProductPage({ params }) {
                   aria-label="Add to wishlist"
                 >
                   <Heart className="h-5 w-5" />
-                  View 
+                  
                 </button>
 
                 <button
@@ -254,13 +254,14 @@ export default function ProductPage({ params }) {
                 </button>
               </div>
 
-              <div className="mt-4 text-sm text-gray-600">
+              {/* <div className="mt-4 text-sm text-gray-600">
                 {product.inStock ? (
                   <span className="text-green-600 font-medium">✓ In stock and ready to ship</span>
-                ) : (
+                ) : 
+                (
                   <span className="text-red-600 font-medium">× Out of stock</span>
                 )}
-              </div>
+              </div> */}
             </div>
 
             {/* Product Information Tabs */}
@@ -280,7 +281,7 @@ export default function ProductPage({ params }) {
                     Features
                   </button>
                 )}
-                {product.details && (
+                {product.details?.length && (
                   <button
                     onClick={() => setActiveTab("details")}
                     className={`py-3 px-4 text-sm font-medium ${activeTab === "details" ? "text-[#854d27] border-b-2 border-[#854d27]" : "text-gray-500 hover:text-[#854d27]"}`}

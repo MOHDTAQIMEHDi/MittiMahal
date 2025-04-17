@@ -434,6 +434,7 @@ function MainNavbar() {
                                 </button>
                                 <button className="text-[#5D4037] hover:text-[#8B4513] transition-colors duration-200 relative">
                                     <ShoppingBag className="h-5 w-5" />
+                                    <Link href="/user/cart" className="absolute inset-0"></Link>
                                     <span className="absolute -top-2 -right-2 bg-[#D2691E] text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
                                         2
                                     </span>

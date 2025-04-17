@@ -27,7 +27,7 @@ const Login = () => {
           console.log(result.data?.token);
           localStorage.setItem('token', result.data?.token);
           setUserLoggedIn(true);
-          router.push('/');
+          
 
         }).catch((err) => {
           console.log(err);
