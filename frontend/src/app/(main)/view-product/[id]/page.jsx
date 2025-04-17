@@ -254,6 +254,7 @@ export default function ProductPage({ params }) {
                   aria-label="Add to wishlist"
                 >
                   <Heart className="h-5 w-5" />
+                  View 
                 </button>
 
                 <button

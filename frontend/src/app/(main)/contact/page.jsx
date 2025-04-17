@@ -43,7 +43,7 @@ function ContactUs() {
                     type="text"
                     id="name"
                     className="w-full px-4 py-3 rounded-lg border border-[#E6C2A0] focus:outline-none focus:ring-2 focus:ring-[#8B4513] focus:border-[#8B4513] bg-white/90"
-                    placeholder="John Doe"
+                    placeholder="Enter your name"
                   />
                 </div>
                 <div>
@@ -54,7 +54,7 @@ function ContactUs() {
                     type="email"
                     id="email"
                     className="w-full px-4 py-3 rounded-lg border border-[#E6C2A0] focus:outline-none focus:ring-2 focus:ring-[#8B4513] focus:border-[#8B4513] bg-white/90"
-                    placeholder="john@example.com"
+                    placeholder="name@example.com"
                   />
                 </div>
               </div>

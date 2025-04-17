@@ -222,7 +222,20 @@ export default function ManageProducts() {
                                 </div>
                               </Link>
                               <button
-                                onClick={() => alert(`Deleting product: ${product.name}`)}
+                                //onClick={() => alert(`Deleting product: ${product.name}`)}
+                                onClick={async () => {
+                                  const confirmDelete = window.confirm(`Are you sure you want to delete ${product.name}?`);
+                                  if (confirmDelete) {
+                                    try {
+                                      await axios.delete(`http://localhost:5000/product/delete/${product._id}`);
+                                      alert(`${product.name} has been deleted successfully.`);
+                                      setProducts((prevProducts) => prevProducts.filter((p) => p._id !== product._id));
+                                    } catch (error) {
+                                      console.error("Error deleting product:", error);
+                                      alert("Failed to delete the product. Please try again.");
+                                    }
+                                  }
+                                }}
                                 className="block w-full px-4 py-2 text-left text-sm text-red-600 hover:bg-gray-100 dark:text-red-400 dark:hover:bg-gray-700"
                               >
                                 <div className="flex items-center">

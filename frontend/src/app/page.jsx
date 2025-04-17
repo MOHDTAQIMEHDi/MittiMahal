@@ -144,6 +144,7 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [cartItems, setCartItems] = useState([]) // Replace with actual cart items from context or state
 
   const categoryRef = useRef(null)
   const accountRef = useRef(null)
@@ -251,7 +252,14 @@ function Navbar() {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-6">
+            <Link
+                href="/"
+                className="text-[#5D4037] hover:text-[#8B4513] font-medium transition-colors duration-200 text-sm"
+              >
+                Home
+              </Link>
               <div className="relative" ref={categoryRef}>
+                
                 <button
                   className="flex items-center text-[#5D4037] hover:text-[#8B4513] font-medium transition-colors duration-200 text-sm"
                   onClick={() => setIsCategoryOpen(!isCategoryOpen)}
@@ -382,13 +390,13 @@ function Navbar() {
                     </Link> */}
                     <div className="border-t border-gray-200 my-1"></div>
                     <Link
-                      href="/auth/seller-login"
+                      href="/seller-login"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#F5EFE7] hover:text-[#8B4513]"
                     >
                       Seller Login
                     </Link>
                     <Link
-                      href="/auth/seller-signup"
+                      href="/seller-signup"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#F5EFE7] hover:text-[#8B4513]"
                     >
                       Seller Signup
@@ -405,16 +413,18 @@ function Navbar() {
               </div>
               <button className="flex items-center justify-center w-9 h-9 rounded-full bg-[#F5EFE7] text-[#5D4037] hover:bg-[#E6C2A0] hover:text-[#8B4513] transition-colors duration-200 relative">
                 <Heart className="h-5 w-5" />
-                <span className="absolute -top-1 -right-1 bg-[#D2691E] text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
-                  3
-                </span>
+                {/* <span className="absolute -top-1 -right-1 bg-[#D2691E] text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                
+                </span> */}
               </button>
-              <button className="flex items-center justify-center w-9 h-9 rounded-full bg-[#F5EFE7] text-[#5D4037] hover:bg-[#E6C2A0] hover:text-[#8B4513] transition-colors duration-200 relative">
+              <Link href="/user/cart" className="flex items-center justify-center w-9 h-9 rounded-full bg-[#F5EFE7] text-[#5D4037] hover:bg-[#E6C2A0] hover:text-[#8B4513] transition-colors duration-200 relative">
                 <ShoppingBag className="h-5 w-5" />
                 <span className="absolute -top-1 -right-1 bg-[#D2691E] text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
-                  2
+                  
+                  {cartItems.reduce((total, item) => total + item.quantity, 0)}
+                  
                 </span>
-              </button>
+              </Link>
             </div>
 
             {/* Mobile menu button */}

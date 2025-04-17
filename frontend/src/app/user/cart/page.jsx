@@ -115,7 +115,7 @@ export default function CartPage() {
                     {/* Total */}
                     <div className="col-span-2 text-center text-gray-700 flex justify-between md:justify-center items-center">
                       <span className="md:hidden font-medium text-[#854d27] mr-2">Total:</span>
-                      <span>${(item.price * item.quantity).toFixed(2)}</span>
+                      <span>₹{(item.price * item.quantity).toFixed(2)}</span>
                       <button
                         onClick={() => removeItemFromCart(item._id)}
                         className="ml-4 text-red-500 hover:text-red-700 transition-colors md:absolute md:right-8"
@@ -137,20 +137,20 @@ export default function CartPage() {
                 <div className="space-y-4">
                   <div className="flex justify-between text-gray-600">
                     <span>Subtotal</span>
-                    <span>${calculateTotalAmount().toFixed(2)}</span>
+                    <span>₹{calculateTotalAmount().toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-gray-600">
                     <span>Tax (8%)</span>
-                    <span>${calculateTax().toFixed(2)}</span>
+                    <span>₹{calculateTax().toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-gray-600">
                     <span>Shipping</span>
-                    <span>$5.99</span>
+                    <span>₹5.99</span>
                   </div>
                   <div className="border-t border-gray-200 pt-4 mt-4">
                     <div className="flex justify-between font-bold text-lg text-[#854d27]">
                       <span>Total</span>
-                      <span>${calculateTotal().toFixed(2)}</span>
+                      <span>₹{calculateTotal().toFixed(2)}</span>
                     </div>
                     <p className="text-xs text-gray-500 mt-1">Including VAT</p>
                   </div>
