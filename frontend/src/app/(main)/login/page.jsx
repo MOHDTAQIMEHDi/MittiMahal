@@ -7,10 +7,12 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { ShoppingCart } from 'lucide-react';
 import useAppContext from '@/context/AppContext';
+import { useRouter } from 'next/navigation';
 
 const Login = () => {
 
   const { userLoggedIn, setUserLoggedIn } = useAppContext();
+  const router = useRouter();
 
   const loginForm = useFormik({
     initialValues: {
@@ -24,9 +26,15 @@ const Login = () => {
       axios.post('http://localhost:5000/user/authenticate', values)
         .then((result) => {
           toast.success('Login Success');
-          console.log(result.data?.token);
-          localStorage.setItem('token', result.data?.token);
+          console.log(result.data);
           setUserLoggedIn(true);
+          if(result.data.role === 'admin'){
+            localStorage.setItem('admin', result.data?.token);
+            router.push('/admin/add-product');
+          }else{
+            localStorage.setItem('token', result.data?.token);
+            router.push('/');
+          }
           
 
         }).catch((err) => {

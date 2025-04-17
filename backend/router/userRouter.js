@@ -79,8 +79,8 @@ router.put ('/update/:id', (req, res) => {
         .then((result) => {
             if (result){
                 //generate token
-                const {_id,name,email}=result;
-                const payload ={_id,name,email};
+                const {_id,name,email, role}=result;
+                const payload ={_id,name,email, role};
                 jwt.sign(
                     payload,
                     process.env.JWT_SECRET,
@@ -90,7 +90,7 @@ router.put ('/update/:id', (req, res) => {
                             console.log(err);
                             res.status(500).json(err);
                         }else {
-                           res.status(200).json({token});     
+                           res.status(200).json({token, role});     
                         }
                     }
                 )
