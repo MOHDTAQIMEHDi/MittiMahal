@@ -22,6 +22,7 @@ const Login= () => {
       toast.success('Login Success');
       console.log(result.data?.token);
       localStorage.setItem('seller-token', result.data?.token);
+      router.push('/ad');
       
       
     }).catch((err) => {
@@ -34,21 +35,7 @@ const Login= () => {
 
   return (
     <div className='min-h-screen bg-[#f8f5f2]'>
-        <header className="bg-[#854d27] text-white p-4 shadow-md">
-            <div className="container mx-auto flex justify-between items-center">
-              <span className="text-2xl font-bold">
-                Mitti Mahal
-              </span>
-              <div className="flex items-center space-x-4">
-                <div className="relative">
-                  <ShoppingCart className="h-6 w-6" />
-                  {/* <span className="absolute -top-2 -right-2 bg-[#d4a373] text-white rounded-full h-5 w-5 flex items-center justify-center text-xs">
-                    {cartItems.reduce((total, item) => total + item.quantity, 0)}
-                  </span> */}
-                </div>
-              </div>
-            </div>
-          </header>
+        
     <div>
         {/* <h1 class='text-center font-bold my-10 text-5xl' >Login Page</h1>
         <button className='global-btn'>Login button</button>

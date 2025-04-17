@@ -93,22 +93,7 @@ export default function ProductPage({ params }) {
 
   return (
     <div className="min-h-screen bg-[#f8f5f2]">
-      {/* Header */}
-      <header className="bg-[#854d27] text-white p-4 shadow-md">
-        <div className="container mx-auto flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold">
-            Mitti Mahal
-          </Link>
-          <div className="flex items-center space-x-4">
-            <div className="relative">
-              <ShoppingCart className="h-6 w-6" />
-              <span className="absolute -top-2 -right-2 bg-[#d4a373] text-white rounded-full h-5 w-5 flex items-center justify-center text-xs">
-                3
-              </span>
-            </div>
-          </div>
-        </div>
-      </header>
+      
 
       {/* Breadcrumbs */}
       <div className="container mx-auto py-4 px-4">

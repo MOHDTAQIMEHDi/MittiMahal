@@ -40,14 +40,7 @@ export default function BrowsePage() {
 
   return (
     <div className="min-h-screen bg-[#f8f5f2]">
-      <header className="bg-[#854d27] text-white p-4 shadow-md">
-        <nav className="container mx-auto flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold">Mitti Mahal</Link>
-          <div className="flex items-center space-x-4">
-            <Link href="/user/cart" className="hover:text-[#d4a373] transition-colors duration-200">Cart</Link>
-          </div>
-        </nav>
-      </header>
+     
 
       <div className="container mx-auto py-8 px-4">
         <h1 className="text-3xl font-bold text-[#854d27] mb-2">Browse Our Collection</h1>

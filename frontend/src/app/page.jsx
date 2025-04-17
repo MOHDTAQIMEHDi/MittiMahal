@@ -30,6 +30,7 @@ import {
 import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
 import useAppContext from "@/context/AppContext"
+import Navbar from "./user/navbar"
 
 // Main component is exported at the end of the file
 

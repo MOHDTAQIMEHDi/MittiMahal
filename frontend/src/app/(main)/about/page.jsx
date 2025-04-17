@@ -6,7 +6,7 @@ import React from 'react'
 function AboutUs() {
   return (
     <div className='min-h-screen bg-[#f8f5f2]'>
-            <header className="bg-[#854d27] text-white p-4 shadow-md">
+            {/* <header className="bg-[#854d27] text-white p-4 shadow-md">
                 <div className="container mx-auto flex justify-between items-center">
                   <span className="text-2xl font-bold">
                     Mitti Mahal
@@ -17,10 +17,10 @@ function AboutUs() {
                       {/* <span className="absolute -top-2 -right-2 bg-[#d4a373] text-white rounded-full h-5 w-5 flex items-center justify-center text-xs">
                         {cartItems.reduce((total, item) => total + item.quantity, 0)}
                       </span> */}
-                    </div>
+                    {/* </div>
                   </div>
                 </div>
-              </header>
+              </header> */} 
     <section className="py-10 md:py-16 bg-[#F5EFE7]">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12">
