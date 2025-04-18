@@ -382,7 +382,7 @@ export default function CheckoutPage() {
                             <div className="flex-1">
                               <div className="flex justify-between">
                                 <span className="font-medium">{option.name}</span>
-                                <span className="font-medium">${option.price.toFixed(2)}</span>
+                                <span className="font-medium">₹{option.price.toFixed(2)}</span>
                               </div>
                               <p className="text-sm text-gray-500">{option.days}</p>
                             </div>
@@ -750,7 +750,7 @@ export default function CheckoutPage() {
                       <div>
                         <div className="flex justify-between text-sm font-medium text-gray-900">
                           <h3 className="line-clamp-1">{item.name}</h3>
-                          <p className="ml-4">${(item.price * item.quantity).toFixed(2)}</p>
+                          <p className="ml-4">₹{(item.price * item.quantity).toFixed(2)}</p>
                         </div>
                         <p className="mt-1 text-sm text-gray-500 line-clamp-1">{item.description}</p>
                       </div>
@@ -765,21 +765,21 @@ export default function CheckoutPage() {
               <div className="space-y-2 border-t border-b py-4 mb-4">
                 <div className="flex justify-between text-sm">
                   <span>Subtotal</span>
-                  <span>${calculateSubtotal().toFixed(2)}</span>
+                  <span>₹{calculateSubtotal().toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span>Shipping</span>
-                  <span>${getShippingCost().toFixed(2)}</span>
+                  <span>₹{getShippingCost().toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span>Tax (8%)</span>
-                  <span>${calculateTax().toFixed(2)}</span>
+                  <span>₹{calculateTax().toFixed(2)}</span>
                 </div>
               </div>
 
               <div className="flex justify-between font-bold text-lg text-[#854d27]">
                 <span>Total</span>
-                <span>${calculateTotal().toFixed(2)}</span>
+                <span>₹{calculateTotal().toFixed(2)}</span>
               </div>
 
               {currentStep < 4 && (

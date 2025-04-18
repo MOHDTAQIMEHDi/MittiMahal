@@ -1,5 +1,5 @@
 export const categories = [
-  { name: "Home Decor", count: 45 },
+  { name: "Home Decor",  count: 45 },
   { name: "Kitchen & Dining", count: 38 },
   { name: "Garden Pottery", count: 32 },
   { name: "Artistic Sculptures", count: 28 },

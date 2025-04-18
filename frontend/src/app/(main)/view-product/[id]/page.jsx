@@ -13,25 +13,25 @@ const relatedProducts = [
     id: "terracotta-planter",
     name: "Terracotta Planter",
     price: 24.99,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/pexels-joaquin-carfagna-3131171-17756196.jpg",
   },
   {
     id: "ceramic-dinner-set",
     name: "Ceramic Dinner Set",
     price: 89.99,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/pexels-furkanfdemir-6310297.jpg",
   },
   {
     id: "clay-cooking-pot",
     name: "Clay Cooking Pot",
     price: 45.99,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/pexels-yifan-tang-94970673-14339600.jpg",
   },
   {
     id: "earthen-tea-cups",
-    name: "Earthen Tea Cups (Set of 4)",
+    name: "Earthen Tea Cups (Set of 2)",
     price: 29.99,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/pexels-ekaterina-bolovtsova-6312155.jpg",
   },
 ]
 
@@ -169,7 +169,7 @@ export default function ProductPage({ params }) {
             </div>
 
             <div className="text-2xl font-bold text-[#854d27]">
-              ${(product.price || 0).toFixed(2)}
+            ₹{(product.price || 0).toFixed(2)}
             </div>
 
             {/* Color Selection */}
@@ -332,7 +332,7 @@ export default function ProductPage({ params }) {
                     <h3 className="text-[#854d27] font-medium text-sm md:text-base group-hover:text-[#6e3b1e]">
                       {item.name}
                     </h3>
-                    <p className="text-gray-700 font-bold mt-1">${item.price.toFixed(2)}</p>
+                    <p className="text-gray-700 font-bold mt-1">₹{item.price.toFixed(2)}</p>
                     <button className="mt-2 w-full py-2 bg-[#e9e2d0] text-[#854d27] rounded text-sm font-medium hover:bg-[#d4a373] hover:text-white transition-colors duration-300">
                       View Product
                     </button>

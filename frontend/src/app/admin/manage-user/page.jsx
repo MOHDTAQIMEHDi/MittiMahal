@@ -109,13 +109,13 @@ export default function ManageUsers() {
           <h1 className="text-3xl font-bold tracking-tight">Manage Users</h1>
           <p className="text-gray-500 dark:text-gray-400">View and manage all users of Mitti Mahal</p>
         </div>
-        <button
+        {/* <button
           onClick={() => setOpenDialog(true)}
           className="inline-flex items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-blue-600 dark:hover:bg-blue-700"
         >
           <UserPlus className="mr-2 h-4 w-4" />
           Add New User
-        </button>
+        </button> */}
       </div>
 
       <div className="rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-950">
@@ -159,45 +159,24 @@ export default function ManageUsers() {
                 <tr className="border-b border-gray-200 dark:border-gray-700">
                   <th className="px-4 py-2 text-left text-sm font-medium text-gray-500 dark:text-gray-400">Name</th>
                   <th className="px-4 py-2 text-left text-sm font-medium text-gray-500 dark:text-gray-400">Email</th>
-                  {/* <th className="px-4 py-2 text-left text-sm font-medium text-gray-500 dark:text-gray-400">Role</th>
-                  <th className="px-4 py-2 text-left text-sm font-medium text-gray-500 dark:text-gray-400">Status</th>
-                  <th className="px-4 py-2 text-left text-sm font-medium text-gray-500 dark:text-gray-400">Orders</th>
-                  <th className="px-4 py-2 text-left text-sm font-medium text-gray-500 dark:text-gray-400">Joined</th> */}
                   <th className="px-4 py-2 text-right text-sm font-medium text-gray-500 dark:text-gray-400">Actions</th>
                 </tr>
               </thead>
               <tbody>
-                {user.map((users,index) => (
-                  <tr key={user.id} className="border-b border-gray-200 dark:border-gray-700">
+                {user.map((users) => (
+                  <tr key={users._id} className="border-b border-gray-200 dark:border-gray-700">
                     <td className="px-4 py-3 text-sm font-medium">{users.name}</td>
                     <td className="px-4 py-3 text-sm">{users.email}</td>
-                    <td>
-                      <button className="bg-red-500 rounded px-4 py-2" onClick={() => deleteUser(users._id)}>Delete</button>
-                    </td>
-                    {/* <td className="px-4 py-3 text-sm">{user.role}</td> */}
-                    {/* <td className="px-4 py-3 text-sm">
-                      <span
-                        className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                          user.status === "active"
-                            ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
-                            : "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300"
-                        }`}
-                      >
-                        {user.status}
-                      </span>
-                    </td>
-                    <td className="px-4 py-3 text-sm">{user.orders}</td>
-                    <td className="px-4 py-3 text-sm">{user.joined}</td> */}
-                    {/* <td className="px-4 py-3 text-sm text-right">
+                    <td className="px-4 py-3 text-sm text-right">
                       <div className="relative">
                         <button
-                          onClick={() => toggleDropdown(user.id)}
+                          onClick={() => toggleDropdown(users._id)}
                           className="rounded-md p-1 hover:bg-gray-100 dark:hover:bg-gray-800"
                         >
                           <MoreHorizontal className="h-4 w-4" />
                           <span className="sr-only">Open menu</span>
                         </button>
-                        {openDropdown === user.id && (
+                        {openDropdown === users._id && (
                           <div className="absolute right-0 z-10 mt-2 w-48 rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-800 dark:ring-gray-700">
                             <div className="px-3 py-2 text-xs font-medium text-gray-500 dark:text-gray-400">
                               Actions
@@ -209,13 +188,16 @@ export default function ManageUsers() {
                             <button className="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700">
                               Edit user
                             </button>
-                            <button className="block w-full px-4 py-2 text-left text-sm text-red-600 hover:bg-gray-100 dark:text-red-400 dark:hover:bg-gray-700">
+                            <button
+                              onClick={() => deleteUser(users._id)}
+                              className="block w-full px-4 py-2 text-left text-sm text-red-600 hover:bg-gray-100 dark:text-red-400 dark:hover:bg-gray-700"
+                            >
                               Delete user
                             </button>
                           </div>
                         )}
                       </div>
-                    </td> */}
+                    </td>
                   </tr>
                 ))}
               </tbody>

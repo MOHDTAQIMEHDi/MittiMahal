@@ -30,7 +30,7 @@ const Login = () => {
           setUserLoggedIn(true);
           if(result.data.role === 'admin'){
             localStorage.setItem('admin', result.data?.token);
-            router.push('/admin/add-product');
+            router.push('/admin');
           }else{
             localStorage.setItem('token', result.data?.token);
             router.push('/');

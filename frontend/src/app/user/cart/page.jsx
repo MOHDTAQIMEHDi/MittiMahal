@@ -100,7 +100,7 @@ export default function CartPage() {
 
                     {/* Price */}
                     <div className="col-span-2 text-center text-gray-700 mb-4 md:mb-0">
-                      <span className="md:hidden font-medium text-[#854d27] mr-2">Price:</span>${item.price.toFixed(2)}
+                      <span className="md:hidden font-medium text-[#854d27] mr-2">Price:</span>₹{item.price.toFixed(2)}
                     </div>
 
                     {/* Quantity */}

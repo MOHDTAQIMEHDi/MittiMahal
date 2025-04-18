@@ -148,7 +148,7 @@ function MainNavbar() {
 
                         {/* Desktop Navigation */}
                         <div className="hidden lg:flex items-center space-x-6">
-                            <div className="relative" ref={categoryRef}>
+                            {/* <div className="relative" ref={categoryRef}>
                                 <button
                                     className="flex items-center text-[#5D4037] hover:text-[#8B4513] font-medium transition-colors duration-200 text-sm"
                                     onClick={() => setIsCategoryOpen(!isCategoryOpen)}
@@ -209,7 +209,7 @@ function MainNavbar() {
                                         </div>
                                     </div>
                                 )}
-                            </div>
+                            </div> */}
                             {/* <Link
                   href="/new-arrivals"
                   className="text-[#5D4037] hover:text-[#8B4513] font-medium transition-colors duration-200 text-sm"
@@ -228,6 +228,18 @@ function MainNavbar() {
                 >
                   Artisans
                 </Link> */}
+                             <Link
+                                href="/"
+                                className="text-[#5D4037] hover:text-[#8B4513] font-medium transition-colors duration-200 text-sm"
+                            >
+                                Home
+                            </Link>
+                            <Link
+                                href="/browse-product"
+                                className="text-[#5D4037] hover:text-[#8B4513] font-medium transition-colors duration-200 text-sm"
+                            >
+                                Shop
+                            </Link>
                             <Link
                                 href="/about"
                                 className="text-[#5D4037] hover:text-[#8B4513] font-medium transition-colors duration-200 text-sm"
