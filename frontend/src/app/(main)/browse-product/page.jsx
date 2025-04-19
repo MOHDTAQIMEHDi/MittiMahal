@@ -43,8 +43,8 @@ export default function BrowsePage() {
      
 
       <div className="container mx-auto py-8 px-4">
-        <h1 className="text-3xl font-bold text-[#854d27] mb-2">Browse Our Collection</h1>
-        <p className="text-gray-600 mb-8">Discover our handcrafted pottery and ceramic products</p>
+        <h1 className="text-3xl text-center font-bold text-[#854d27] mb-2">Browse Our Collection</h1>
+        <p className="text-gray-600 text-center mb-8">Discover our handcrafted pottery and ceramic products</p>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Filters Sidebar */}
