@@ -10,33 +10,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik"
 import * as Yup from "yup"
 import useCartContext from "@/context/CartContext"
 
-// Mock cart items data
-// const cartItems = [
-//   {
-//     id: 1,
-//     name: "Terracotta Planter",
-//     description: "Handcrafted terracotta planter with natural finish",
-//     price: 24.99,
-//     quantity: 1,
-//     image: "/placeholder.svg?height=80&width=80",
-//   },
-//   {
-//     id: 2,
-//     name: "Clay Water Pot",
-//     description: "Traditional clay water pot for natural cooling",
-//     price: 34.99,
-//     quantity: 2,
-//     image: "/placeholder.svg?height=80&width=80",
-//   },
-//   {
-//     id: 3,
-//     name: "Ceramic Dinner Set",
-//     description: "6-piece handmade ceramic dinner set",
-//     price: 89.99,
-//     quantity: 1,
-//     image: "/placeholder.svg?height=80&width=80",
-//   },
-// ]
+
 
 // Shipping options
 const shippingOptions = [
@@ -97,7 +71,7 @@ export default function CheckoutPage() {
     city: "",
     state: "",
     zipCode: "",
-    country: "United States",
+    country: "I",
     shippingMethod: "standard",
 
     // Payment info

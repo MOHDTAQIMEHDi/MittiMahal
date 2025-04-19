@@ -311,22 +311,23 @@ function MainNavbar() {
                                             Seller Signup
                                         </Link>
                                         <div className="border-t border-gray-200 my-1"></div>
-                                        <Link
+                                        {/* <Link
                                             href="/admin"
                                             className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#F5EFE7] hover:text-[#8B4513]"
                                         >
                                             Admin Portal
-                                        </Link>
+                                        </Link> */}
                                     </div>
                                 )}
                             </div>
                             <button className="flex items-center justify-center w-9 h-9 rounded-full bg-[#F5EFE7] text-[#5D4037] hover:bg-[#E6C2A0] hover:text-[#8B4513] transition-colors duration-200 relative">
                                 <Heart className="h-5 w-5" />
-                                <span className="absolute -top-1 -right-1 bg-[#D2691E] text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                                {/* <span className="absolute -top-1 -right-1 bg-[#D2691E] text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
                                     3
-                                </span>
+                                </span> */}
                             </button>
-                            <button className="flex items-center justify-center w-9 h-9 rounded-full bg-[#F5EFE7] text-[#5D4037] hover:bg-[#E6C2A0] hover:text-[#8B4513] transition-colors duration-200 relative">
+                            <button onClick={() => window.location.href = '/user/cart'}
+                             className="flex items-center justify-center w-9 h-9 rounded-full bg-[#F5EFE7] text-[#5D4037] hover:bg-[#E6C2A0] hover:text-[#8B4513] transition-colors duration-200 relative">
                                 <ShoppingBag className="h-5 w-5" />
                                 <span className="absolute -top-2 -right-2 bg-[#d4a373] text-white rounded-full h-5 w-5 flex items-center justify-center text-xs">
                                     {cartItems.reduce((total, item) => total + item.quantity, 0)}

@@ -4,54 +4,7 @@ import { useEffect, useState } from "react"
 import { Search, MoreHorizontal, UserPlus, User } from "lucide-react"
 import axios from "axios"
 
-// Sample user data
-// const users = [
-//   {
-//     id: 1,
-//     name: "Rahul Sharma",
-//     email: "rahul@example.com",
-//     status: "active",
-//     role: "Customer",
-//     orders: 12,
-//     joined: "Jan 12, 2023",
-//   },
-//   {
-//     id: 2,
-//     name: "Priya Patel",
-//     email: "priya@example.com",
-//     status: "active",
-//     role: "Customer",
-//     orders: 8,
-//     joined: "Feb 23, 2023",
-//   },
-//   {
-//     id: 3,
-//     name: "Amit Kumar",
-//     email: "amit@example.com",
-//     status: "inactive",
-//     role: "Customer",
-//     orders: 3,
-//     joined: "Mar 15, 2023",
-//   },
-//   {
-//     id: 4,
-//     name: "Neha Singh",
-//     email: "neha@example.com",
-//     status: "active",
-//     role: "Admin",
-//     orders: 0,
-//     joined: "Apr 5, 2023",
-//   },
-//   {
-//     id: 5,
-//     name: "Vikram Joshi",
-//     email: "vikram@example.com",
-//     status: "active",
-//     role: "Customer",
-//     orders: 15,
-//     joined: "May 18, 2023",
-//   },
-// ]
+
 
 export default function ManageUsers() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -109,13 +62,6 @@ export default function ManageUsers() {
           <h1 className="text-3xl font-bold tracking-tight">Manage Users</h1>
           <p className="text-gray-500 dark:text-gray-400">View and manage all users of Mitti Mahal</p>
         </div>
-        {/* <button
-          onClick={() => setOpenDialog(true)}
-          className="inline-flex items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-blue-600 dark:hover:bg-blue-700"
-        >
-          <UserPlus className="mr-2 h-4 w-4" />
-          Add New User
-        </button> */}
       </div>
 
       <div className="rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-950">

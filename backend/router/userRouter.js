@@ -21,9 +21,7 @@ router.post ('/add', (req, res) => {
     });
 });
 
-// router.get ('/getall', (req, res) => {
-//     res.send('response from getall'); // send response to client
-// });
+
 //getall
 router.get ('/getall', (req, res) => { 
     Model.find()
@@ -58,11 +56,6 @@ router.put ('/update/:id', (req, res) => {
      });
 });
 
-
-
-
-//router.get ('/delete', (req, res) => { 
-    //res.send('response from delete'); // send response to client});
 
     router.delete('/delete/:id',(req,res)=>{
         Model.findByIdAndDelete(req.params.id)

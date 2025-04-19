@@ -45,6 +45,7 @@ function HeroSlider() {
       cta: "Shop Collection",
       position: "left",
       color: "brown",
+      link: "/browse-product",
     },
     {
       image: "/pexels-ludakavun-12915928.jpg",
@@ -53,6 +54,7 @@ function HeroSlider() {
       cta: "Explore Now",
       position: "right",
       color: "terracotta",
+      link: "/browse-product",
     },
     {
       image: "/pexels-quang-nguyen-vinh-222549-2134816.jpg",
@@ -61,6 +63,7 @@ function HeroSlider() {
       cta: "Meet Artisans",
       position: "center",
       color: "earth",
+      link: "/browse-product",
     },
   ]
 
@@ -129,7 +132,8 @@ function HeroSlider() {
                   {slide.title}
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-white">{slide.subtitle}</p>
-                <button className="bg-[#8B4513] hover:bg-[#A0522D] text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-6 text-sm sm:text-base md:text-lg rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105">
+                <button  onClick={() => window.location.href = '/browse-product'}
+                className="bg-[#8B4513] hover:bg-[#A0522D] text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-6 text-sm sm:text-base md:text-lg rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105">
                   {slide.cta}
                 </button>
               </div>
@@ -217,6 +221,7 @@ function FeaturedCollections() {
       title: "Home Decor",
       image: "/pexels-kseniachernaya-15170521.jpg",
       description: "Beautiful clay items to adorn your living space",
+      
     },
     {
       id: 2,
@@ -266,7 +271,7 @@ function FeaturedCollections() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                   <button
-                    variant="outline"
+                    onClick={() => window.location.href = '/browse-product'}
                     className="w-full bg-white/20 backdrop-blur-sm border-white text-white hover:bg-white hover:text-[#8B4513]"
                   >
                     View Collection
@@ -279,7 +284,7 @@ function FeaturedCollections() {
                 </h3>
                 <p className="text-[#5D4037]/80 mb-4">{collection.description}</p>
                 <button
-                  variant="link"
+                  onClick={() => window.location.href = '/browse-product'}
                   className="text-[#8B4513] p-0 hover:text-[#D2691E] group-hover:underline transition-all duration-300"
                 >
                   Explore Collection
@@ -303,6 +308,7 @@ function BrowseProducts() {
       rating: 4.5,
       isNew: true,
       discount: null,
+      
     },
     {
       id: 2,
@@ -373,12 +379,14 @@ function BrowseProducts() {
               className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-gray-100"
             >
               <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
-                <Image
-                  src={product.image || "/placeholder.svg"}
-                  alt={product.name}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
+                <Link href={`/view-product/${product.id}`}>
+                  <Image
+                    src={product.image || "/placeholder.svg"}
+                    alt={product.name}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                </Link>
                 {product.isNew && (
                   <div className="absolute top-3 left-3 bg-[#D2691E] text-white text-xs font-bold px-2 py-1 rounded-full">
                     NEW
@@ -391,9 +399,11 @@ function BrowseProducts() {
                 )}
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300 flex items-center justify-center">
                   <div className="flex space-x-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                    <button className="bg-white text-[#8B4513] hover:bg-[#8B4513] hover:text-white rounded-full w-10 h-10 p-0 flex items-center justify-center">
-                      <Search className="h-4 w-4" />
-                    </button>
+                    <Link href={`/view-product/${product.id}`}>
+                      <button className="bg-white text-[#8B4513] hover:bg-[#8B4513] hover:text-white rounded-full w-10 h-10 p-0 flex items-center justify-center">
+                        <Search className="h-4 w-4" />
+                      </button>
+                    </Link>
                     <button className="bg-white text-[#8B4513] hover:bg-[#8B4513] hover:text-white rounded-full w-10 h-10 p-0 flex items-center justify-center">
                       <Heart className="h-4 w-4" />
                     </button>
@@ -431,7 +441,8 @@ function BrowseProducts() {
                     <span className="ml-1 text-xs text-gray-600">({product.rating})</span>
                   </div>
                 </div>
-                <button className="w-full bg-[#8B4513] hover:bg-[#A0522D] text-white rounded-full transform transition-transform duration-300 group-hover:scale-105">
+                <button onClick={() => window.location.href = '/browse-product'}
+                className="w-full bg-[#8B4513] hover:bg-[#A0522D] text-white rounded-full transform transition-transform duration-300 group-hover:scale-105">
                   Add to Cart
                 </button>
               </div>
@@ -454,6 +465,7 @@ function Testimonials() {
       rating: 5,
       text: "The clay water pot I purchased keeps water naturally cool even in summer. The craftsmanship is exceptional, and it adds a traditional touch to my kitchen. Highly recommend!",
       product: "Clay Water Pot",
+      
     },
     {
       id: 2,

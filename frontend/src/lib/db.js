@@ -1,20 +1,20 @@
 export const categories = [
-  { name: "Home Decor",  count: 45 },
-  { name: "Kitchen & Dining", count: 38 },
-  { name: "Garden Pottery", count: 32 },
-  { name: "Artistic Sculptures", count: 28 },
-  { name: "Traditional Pottery", count: 52 },
-  { name: "Clay Utensils", count: 34 },
-  { name: "Decorative Items", count: 41 },
-  { name: "Religious Items", count: 29 }
+  { name: "Home Decor",  count: 3 },
+  { name: "Kitchen & Dining", count: 5 },
+  { name: "Garden Pottery", count: 4 },
+  { name: "Artistic Sculptures", count: 6 },
+  // { name: "Traditional Pottery", count: 52 },
+  // { name: "Clay Utensils", count: 34 },
+  // { name: "Decorative Items", count: 41 },
+  // { name: "Religious Items", count: 29 }
 ];
 
 export const materials = [
-  { name: "Clay", count: 120 },
-  { name: "Terracotta", count: 85 },
-  { name: "Ceramic", count: 65 },
-  { name: "Earthenware", count: 45 },
-  { name: "Stoneware", count: 38 }
+  { name: "Clay", count: 10 },
+  { name: "Terracotta", count: 5 },
+  { name: "Ceramic", count: 3 },
+  // { name: "Earthenware", count: 45 },
+  // { name: "Stoneware", count: 38 }
 ];
 
 export const colors = [
